@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import Moviepage from './js/moviepage.js';
 import Detail from './js/detail.js';
@@ -12,10 +12,12 @@ const App = () => {
     <div>
       <ResetStyle />
       <GlobalStyle />
-      <Router history={browserHistory}>
-        <Route path="/" component={Moviepage} />
-        <Route path="/:index" component={Detail} />
-      </Router>
+      <BrowserRouter basename={ process.env.PUBLIC_URL }>
+        <Switch>
+          <Route path="/" component={Moviepage} />
+          <Route path="/:index" component={Detail} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
