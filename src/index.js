@@ -13,8 +13,8 @@ const App = () => {
       <ResetStyle />
       <GlobalStyle />
       <Router history={browserHistory}>
-        <Route path="/moviepage" component={Moviepage} />
-        <Route path="/moviepage/:index" component={Detail} />
+        <Route path="/" component={Moviepage} />
+        <Route path="/:index" component={Detail} />
       </Router>
     </div>
   );

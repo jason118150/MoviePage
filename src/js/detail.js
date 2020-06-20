@@ -63,7 +63,7 @@ const DetailButton = styled.button`
 `;
 
 const Detail = (path) => {
-    const login = path.location.pathname.slice(11);
+    const login = path.location.pathname.slice(1);
     const [data, setdata] = useState([]);
     const [isDetailLoading, setisDetailLoading] = useState(true);
     useEffect(() => {
@@ -97,7 +97,7 @@ const Detail = (path) => {
                             <DetailContext>IMDB評分：{data.imdbRating}</DetailContext>
                         </DetailData>
                     </DetailContainer>
-                    <Link to={{ pathname: `/moviepage`, }} >
+                    <Link to={{ pathname: `/`, }} >
                         <DetailButton>回上一頁</DetailButton>
                     </Link>
                     <Footer>Copyright (c) 李彥杰</Footer>
