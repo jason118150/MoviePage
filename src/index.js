@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import Moviepage from './js/moviepage.js';
@@ -12,9 +12,9 @@ const App = () => {
     <div>
       <ResetStyle />
       <GlobalStyle />
-      <BrowserRouter basename={ process.env.PUBLIC_URL }>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route path="/" component={Moviepage} />
+          <Route path="/" exact component={Moviepage} />
           <Route path="/:index" component={Detail} />
         </Switch>
       </BrowserRouter>
@@ -22,9 +22,6 @@ const App = () => {
   );
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+render(<App />,document.getElementById('root'));
 
 serviceWorker.unregister();
