@@ -38,7 +38,7 @@ const MovieList = (props) => {
             <ListTitle>{props.title}</ListTitle>
             <ListCardContainer>
                 {props.data.map((result, id) => 
-                    <Link to={{ pathname: `/${result.imdbID}`, }} key={id}>
+                    <Link to={{ pathname: `/moviepage/${result.imdbID}`, }} key={id}>
                         <ListCardStyle img={result.Poster}></ListCardStyle>
                     </Link>
                 )}

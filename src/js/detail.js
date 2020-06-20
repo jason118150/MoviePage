@@ -63,12 +63,12 @@ const DetailButton = styled.button`
 `;
 
 const Detail = (path) => {
-    const login = path.location.pathname.substr(1);
+    const login = path.location.pathname.slice(11);
     const [data, setdata] = useState([]);
     const [isDetailLoading, setisDetailLoading] = useState(true);
     useEffect(() => {
         const fetchAPI = () => {
-            fetch(`http://www.omdbapi.com/?i=${login}&apikey=69931bf9&plot=full`)
+            fetch(`https://www.omdbapi.com/?i=${login}&apikey=69931bf9&plot=full`)
             .then(response => response.json())
             .then(response => {
                 setdata(response);
@@ -97,7 +97,7 @@ const Detail = (path) => {
                             <DetailContext>IMDB評分：{data.imdbRating}</DetailContext>
                         </DetailData>
                     </DetailContainer>
-                    <Link to={{ pathname: `/`, }} >
+                    <Link to={{ pathname: `/moviepage`, }} >
                         <DetailButton>回上一頁</DetailButton>
                     </Link>
                     <Footer>Copyright (c) 李彥杰</Footer>

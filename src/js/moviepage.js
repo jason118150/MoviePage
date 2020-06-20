@@ -51,7 +51,7 @@ const Moviepage = () => {
 
   useEffect(() => {
     const fetchOMDB = (pagesize) => {
-      fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=69931bf9&s=love&type=movie&y=2019&page=${pagesize}`)
+      fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=69931bf9&s=love&type=movie&y=2019&page=${pagesize}`)
       .then(response => response.json())
       .then(response => {
         setsoonMovie(soonMovie => [...soonMovie, ...response.Search]);
@@ -59,7 +59,7 @@ const Moviepage = () => {
       .catch(error => {
         console.log(error);
       });
-      fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=69931bf9&s=love&type=movie&y=2018&page=${pagesize}`)
+      fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=69931bf9&s=love&type=movie&y=2018&page=${pagesize}`)
       .then(response => response.json())
       .then(response => {
         setnowMovie(nowMovie =>[...nowMovie, ...response.Search]);
@@ -67,7 +67,7 @@ const Moviepage = () => {
       .catch(error => {
         console.log(error);
       });
-      fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=69931bf9&s=love&type=movie&y=2017&page=${pagesize}`)
+      fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=69931bf9&s=love&type=movie&y=2017&page=${pagesize}`)
       .then(response => response.json())
       .then(response => {
         setfavoMovie(favoMovie => [...favoMovie, ...response.Search]);
